@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>AQI</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -14,5 +14,8 @@
         @vite('resources/css/app.pcss')
     </head>
     <body class="antialiased">
+        <div class="flex items-center justify-center h-screen">
+            <livewire:counter />
+        </div>
     </body>
 </html>

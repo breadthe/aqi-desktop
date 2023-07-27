@@ -3,8 +3,25 @@
 @tailwind utilities;
 
 /* @see https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer */
-@layer components {
+/*@layer components {
   .btn {
     @apply bg-lime-500 text-white font-bold py-2 px-4 rounded;
   }
+}*/
+
+button[type="submit"] {
+    @apply bg-lime-500 text-white font-bold py-2 px-4 rounded;
+
+    &:hover {
+        @apply bg-lime-600;
+    }
+}
+
+input {
+    @apply bg-lime-50 py-2 px-4 rounded border border-lime-200;
+    @apply placeholder-lime-500;
+
+    &:focus {
+        @apply outline-none border-lime-500;
+    }
 }

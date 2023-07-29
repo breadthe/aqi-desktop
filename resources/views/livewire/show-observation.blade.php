@@ -41,6 +41,7 @@ $getLastObservation = function()
         ->where("parameter_name", "PM2.5")
         ->limit(1)
         ->union($pm25)
+        ->orderByDesc("parameter_name")
         ->get();
 };
 ?>

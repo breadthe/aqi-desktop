@@ -31,6 +31,8 @@ return [
      */
     'author' => env('NATIVEPHP_APP_AUTHOR'),
 
+    'author_url' => env('NATIVEPHP_APP_AUTHOR_URL'),
+
     /**
      * The default service provider for your application. This provider
      * takes care of bootstrapping your application and configuring

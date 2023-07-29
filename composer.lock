@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38e519fd435d6fc9b6cc43970cf48718",
+    "content-hash": "5f17c8e1626027e303701c3422ea9dff",
     "packages": [
         {
             "name": "brick/math",
@@ -1834,6 +1834,78 @@
             "time": "2023-07-24T21:57:39+00:00"
         },
         {
+            "name": "livewire/volt",
+            "version": "v1.0.0-beta.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/livewire/volt.git",
+                "reference": "7679954f4d9f089ff30bb460feeb98c8f7b929cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/livewire/volt/zipball/7679954f4d9f089ff30bb460feeb98c8f7b929cd",
+                "reference": "7679954f4d9f089ff30bb460feeb98c8f7b929cd",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^10.16|^11.0",
+                "livewire/livewire": "^3.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/folio": "^1.0",
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^8.5",
+                "pestphp/pest": "^2.9.5",
+                "phpstan/phpstan": "^1.10"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Livewire\\Volt\\VoltServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "functions.php"
+                ],
+                "psr-4": {
+                    "Livewire\\Volt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Nuno Maduro",
+                    "email": "nuno@laravel.com"
+                }
+            ],
+            "description": "An elegantly crafted functional API for Laravel Livewire.",
+            "homepage": "https://github.com/livewire/volt",
+            "keywords": [
+                "laravel",
+                "livewire",
+                "volt"
+            ],
+            "support": {
+                "issues": "https://github.com/livewire/volt/issues",
+                "source": "https://github.com/livewire/volt"
+            },
+            "time": "2023-07-26T16:39:41+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "3.4.0",
             "source": {
@@ -2010,16 +2082,16 @@
         },
         {
             "name": "nativephp/laravel",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/laravel.git",
-                "reference": "42ce4e93eb7ed41522f3435acc673ddaf59aa1c7"
+                "reference": "f18c274315fc51931f0f3f628e532ba72d425c4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/laravel/zipball/42ce4e93eb7ed41522f3435acc673ddaf59aa1c7",
-                "reference": "42ce4e93eb7ed41522f3435acc673ddaf59aa1c7",
+                "url": "https://api.github.com/repos/NativePHP/laravel/zipball/f18c274315fc51931f0f3f628e532ba72d425c4a",
+                "reference": "f18c274315fc51931f0f3f628e532ba72d425c4a",
                 "shasum": ""
             },
             "require": {
@@ -2082,22 +2154,22 @@
             ],
             "support": {
                 "issues": "https://github.com/NativePHP/laravel/issues",
-                "source": "https://github.com/NativePHP/laravel/tree/0.1.1"
+                "source": "https://github.com/NativePHP/laravel/tree/0.2.0"
             },
-            "time": "2023-07-25T22:24:01+00:00"
+            "time": "2023-07-28T11:22:59+00:00"
         },
         {
             "name": "nativephp/php-bin",
-            "version": "0.2.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/php-bin.git",
-                "reference": "7a8630aac2c9d784eb46f52ced2fce3bd0155019"
+                "reference": "36fec9027b2be29d1a5d1aa83baf6d8030da66e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/php-bin/zipball/7a8630aac2c9d784eb46f52ced2fce3bd0155019",
-                "reference": "7a8630aac2c9d784eb46f52ced2fce3bd0155019",
+                "url": "https://api.github.com/repos/NativePHP/php-bin/zipball/36fec9027b2be29d1a5d1aa83baf6d8030da66e9",
+                "reference": "36fec9027b2be29d1a5d1aa83baf6d8030da66e9",
                 "shasum": ""
             },
             "type": "library",
@@ -2128,9 +2200,9 @@
             ],
             "support": {
                 "issues": "https://github.com/NativePHP/php-bin/issues",
-                "source": "https://github.com/NativePHP/php-bin/tree/0.2.0"
+                "source": "https://github.com/NativePHP/php-bin/tree/0.3.0"
             },
-            "time": "2023-07-26T12:28:41+00:00"
+            "time": "2023-07-27T10:44:16+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -7960,16 +8032,16 @@
         },
         {
             "name": "spatie/flare-client-php",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/flare-client-php.git",
-                "reference": "943894c6a6b00501365ac0b91ae0dce56f2226fa"
+                "reference": "5f2c6a7a0d2c1d90c12559dc7828fd942911a544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/943894c6a6b00501365ac0b91ae0dce56f2226fa",
-                "reference": "943894c6a6b00501365ac0b91ae0dce56f2226fa",
+                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/5f2c6a7a0d2c1d90c12559dc7828fd942911a544",
+                "reference": "5f2c6a7a0d2c1d90c12559dc7828fd942911a544",
                 "shasum": ""
             },
             "require": {
@@ -8018,7 +8090,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/flare-client-php/issues",
-                "source": "https://github.com/spatie/flare-client-php/tree/1.4.1"
+                "source": "https://github.com/spatie/flare-client-php/tree/1.4.2"
             },
             "funding": [
                 {
@@ -8026,7 +8098,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-06T09:29:49+00:00"
+            "time": "2023-07-28T08:07:24+00:00"
         },
         {
             "name": "spatie/ignition",
@@ -8891,7 +8963,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "livewire/livewire": 10
+        "livewire/livewire": 10,
+        "livewire/volt": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

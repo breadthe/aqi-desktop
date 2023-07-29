@@ -21,6 +21,7 @@ class NativeAppServiceProvider
             ->submenu('About', Menu::new()
                 ->link(config('nativephp.author_url'), config('nativephp.author'))
             )
+            ->editMenu()
             ->submenu('View', Menu::new()
                 ->toggleFullscreen()
                 ->separator()

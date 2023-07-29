@@ -13,9 +13,15 @@
         <!-- Styles -->
         @vite('resources/css/app.pcss')
     </head>
-    <body class="antialiased">
-        <div class="flex items-center justify-center h-screen">
-            <livewire:counter />
-        </div>
+    <body class="antialiased flex flex-col h-screen overflow-hidden">
+        <header class="w-full">
+            <livewire:api-key />
+        </header>
+
+        <main class="flex flex-col justify-start overflow-y-scroll">
+            <livewire:fetch-observation />
+
+            <livewire:show-observation />
+        </main>
     </body>
 </html>

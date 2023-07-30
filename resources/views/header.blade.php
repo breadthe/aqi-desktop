@@ -8,5 +8,4 @@ use \Illuminate\Support\Facades\Route;
         <li><a href="/history" class="{{ Route::is('history') ? 'text-lime-600 font-bold' : '' }}">History</a></li>
         <li><a href="/settings" class="{{ Route::is('settings') ? 'text-lime-600 font-bold' : '' }}">Settings</a></li>
     </ul>
-    <livewire:api-key />
 @endsection

@@ -35,10 +35,10 @@ $save = function () {
 };
 ?>
 
-<div class="w-full flex flex-col items-center gap-2 py-2 bg-lime-950">
+<div class="flex flex-col gap-4">
     @if($apiKey)
         <div class="flex gap-4">
-            <span>API key ✅</span>
+            <span>✅</span>
             <button type="button" wire:click="$toggle('isShowingApiKey')" class="btn-link" title="Show API key">
                 @if($isShowingApiKey)
                     🙈 hide
@@ -57,7 +57,7 @@ $save = function () {
     @endif
 
     @if($isShowingForm)
-        <form wire:submit.prevent="save" class="w-full flex flex-col items-center">
+        <form wire:submit.prevent="save" class="w-full flex flex-col gap-4">
             <div class="flex sm:flex-row flex-col gap-2">
                 <input type="text" id="api_key" wire:model="newApiKey" placeholder="API key">
                 <button type="submit">save</button>

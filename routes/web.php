@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', fn () => view('pages.index'))->name('index');
+Route::get('/', fn () => view('pages.index'))->name('location');
 Route::get('/history', fn () => view('pages.history.index'))->name('history');
 Route::get('/settings', fn () => view('pages.settings.index'))->name('settings');

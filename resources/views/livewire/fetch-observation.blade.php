@@ -1,13 +1,18 @@
 <?php
 
+use App\Models\Observation;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use function Livewire\Volt\{state, mount, rules};
-use App\Models\Observation;
 
+// settings
 state(['settings' => null]);
 state(['apiKey' => null]);
 state(['zip' => null]);
+state(['lastObservation' => null]);
+state(['lastUpdatedAt' => null]);
+
 state(['newObservation' => null]);
 state(['fetchError' => false]);
 
@@ -16,7 +21,9 @@ rules(['zip' => 'required|numeric|digits:5']);
 mount(function () {
     $this->settings = Storage::json('settings.json');
     $this->apiKey = $this->settings['api_key'] ?? null;
-    $this->zip = $this->settings['lastZip'] ?? null;
+    $this->zip = $this->settings['last_zip'] ?? null;
+    $this->lastObservation = $this->settings['last_observation'] ?? null;
+    $this->lastUpdatedAt = $this->settings['last_updated_at'] ?? null;
 });
 
 $fetch = function () {
@@ -35,7 +42,10 @@ $fetch = function () {
 
     // @todo catch invalid api key
 
+    $this->lastUpdatedAt = now();
     $this->newObservation = $response->json();
+
+    $this->persistLastObservationInSettings();
 
     if (is_array($this->newObservation) && empty($this->newObservation)) {
         $this->fetchError = true;
@@ -49,7 +59,18 @@ $fetch = function () {
 };
 
 $saveZipCode = function () {
-    $this->settings['lastZip'] = $this->zip;
+    $this->settings['last_zip'] = $this->zip;
+
+    Storage::put('settings.json', json_encode($this->settings));
+};
+
+$persistLastObservationInSettings = function () {
+    if (empty($this->newObservation)) {
+        return;
+    }
+
+    $this->settings['last_updated_at'] = $this->lastUpdatedAt;
+    $this->settings['last_observation'] = $this->newObservation;
 
     Storage::put('settings.json', json_encode($this->settings));
 };
@@ -95,6 +116,10 @@ $saveObservationParameter = function (array $parameter) {
                 </svg>
             </button>
         </div>
+
+        @if($lastUpdatedAt)
+            <span class="text-xs" title="last updated: {{ $lastUpdatedAt }}">{{ Carbon::make($lastUpdatedAt)->diffForHumans() }}</span>
+        @endif
 
         <div class="w-full text-center bg-lime-900">
             @error('zip') <span class="text-lime-500">{{ $message }}</span> @enderror

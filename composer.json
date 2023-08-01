@@ -13,7 +13,7 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.0@beta",
         "livewire/volt": "^1.0@beta",
-        "nativephp/electron": "^0.1.2"
+        "nativephp/electron": "^0.3.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

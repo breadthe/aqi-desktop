@@ -12,6 +12,10 @@
 
     <!-- Styles -->
     @vite('resources/css/app.pcss')
+
+    <script>
+        const shell = require('electron').shell;
+    </script>
 </head>
 
 <body class="antialiased flex flex-col h-screen overflow-hidden">

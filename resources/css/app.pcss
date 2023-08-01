@@ -7,7 +7,7 @@ body {
 }
 
 button[type="submit"], button[type="button"] {
-    @apply bg-lime-700 text-white font-bold py-2 px-4 rounded;
+    @apply bg-lime-700 border border-lime-600 text-white font-bold py-2 px-4 rounded;
 
     &:hover {
         @apply bg-lime-600;
@@ -26,6 +26,6 @@ input {
 }
 
 button.btn-link {
-    @apply bg-transparent font-normal p-0;
+    @apply bg-transparent border-none font-normal p-0;
     @apply text-lime-600 hover:underline hover:bg-transparent;
 }

@@ -46,8 +46,11 @@ $getLastObservation = function()
 };
 ?>
 
-<div class="flex flex-col p-2">
+<div class="flex flex-col gap-4 p-2">
     @if($lastObservation)
+        <div class="w-full text-center font-bold">
+            {{ "{$lastObservation[0]->reporting_area}, {$lastObservation[0]->state_code}" }}
+        </div>
         <div class="w-full flex justify-center gap-8">
             @foreach($lastObservation as $parameter)
                 <div class="flex flex-col items-center w-1/4 gap-2">

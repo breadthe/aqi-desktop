@@ -61,19 +61,21 @@ $formatDateTime = function ($date_time_observed) {
 
 <div class="flex flex-col py-2 px-8">
     @if($history->count())
-        <table class="w-full mx-auto">
+        <table class="w-full mx-auto max-w-sm">
+            <thead class="sticky top-0 bg-neutral-900/70">
+                <tr class="border-b">
+                    <th class="text-left font-normal">History for <strong>{{ $lastZip }}</th>
+                    <th class="grid grid-cols-2 gap-4">
+                        <span class="text-left">PM2.5</span>
+                        <span class="text-left">O3</span>
+                    </th>
+                </tr>
+            </thead>
             <tbody>
-            <tr class="border-b">
-                <th class="text-left font-normal">History for <strong>{{ $lastZip }}</th>
-                <th class="grid grid-cols-2 gap-4">
-                    <span class="text-left">PM2.5</span>
-                    <span class="text-left">O3</span>
-                </th>
-            </tr>
             @foreach($history as $date_time_observed => $observation_tuple)
-                <tr>
+                <tr class="hover:bg-lime-600/30 border-b border-b-lime-600/30 border-t border-t-transparent">
                     <td class="pr-4 text-xs">
-                        {{ $this->formatDateTime("$date_time_observed:00") }}
+                        <span title="LST (Local Standard Time, no adjustment for Daylight Saving)">{{ $this->formatDateTime("$date_time_observed:00") }}</span>
                     </td>
                     <td class="grid grid-cols-2 gap-4">
                         @foreach($observation_tuple as $observation)

@@ -62,7 +62,7 @@ $save = function () {
                 <button type="button" wire:click="$toggle('isShowingForm')" class="btn-link">cancel</button>
             </div>
 
-            <div class="w-full text-center bg-lime-900">
+            <div class="w-full text-center bg-lime-900 rounded">
                 @error('newApiKey') <span class="text-lime-500">{{ $message }}</span> @enderror
             </div>
         </form>

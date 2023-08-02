@@ -94,7 +94,7 @@ $formatDateTime = function ($date_time_observed) {
             </tbody>
         </table>
     @else
-        <div class="w-full text-center bg-lime-900">
+        <div class="w-full text-center bg-lime-900 rounded">
             <span class="text-lime-500">No history yet</span>
         </div>
     @endif

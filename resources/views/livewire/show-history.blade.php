@@ -37,7 +37,7 @@ $getHistoryForCurrentZip = function () {
         ->whereIn('parameter_name', $parameters)
         ->orderByDesc('date_observed')
         ->orderByDesc('hour_observed')
-        ->orderByDesc('parameter_name') // PM2.5 before O3
+        // ->orderByDesc('parameter_name') // PM2.5 before O3
         ->get()
         ->groupBy('date_time_observed');
 };
@@ -78,16 +78,8 @@ $formatDateTime = function ($date_time_observed) {
                         <span title="LST (Local Standard Time, no adjustment for Daylight Saving)">{{ $this->formatDateTime("$date_time_observed:00") }}</span>
                     </td>
                     <td class="grid grid-cols-2 gap-4">
-                        @foreach($observation_tuple as $observation)
-                            <div class="flex gap-2">
-                                <div class="" title="{{ $observation->category_name }}">
-                                    {{ Category::from($observation->category_number)->getEmoji() }}
-                                </div>
-                                <div class="" title="{{ $observation->category_name }}">
-                                    {{ $observation->aqi }}
-                                </div>
-                            </div>
-                        @endforeach
+                        @include('_history-datapoint', ['parameter' => $observation_tuple[1] ?? null, 'parameter_name' => 'PM2.5'])
+                        @include('_history-datapoint', ['parameter' => $observation_tuple[0] ?? null, 'parameter_name' => 'O3'])
                     </td>
                 </tr>
             @endforeach

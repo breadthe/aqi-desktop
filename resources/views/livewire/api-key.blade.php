@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Native\Laravel\Facades\Settings;
 use function Livewire\Volt\{state, mount, rules};
 
 state(['settings' => null]);
@@ -13,8 +13,7 @@ state(['isShowingApiKey' => false]);
 rules(['newApiKey' => 'required|string']);
 
 mount(function () {
-    $this->settings = Storage::json('settings.json');
-    $this->apiKey = $this->settings['api_key'];
+    $this->apiKey = Settings::get('api_key');
 });
 
 $save = function () {
@@ -23,9 +22,8 @@ $save = function () {
 
     try {
         $this->apiKey = $this->newApiKey;
-        $this->settings['api_key'] = $this->apiKey;
 
-        Storage::put('settings.json', json_encode($this->settings));
+        Settings::set('api_key', $this->apiKey);
 
         $this->newApiKey = null;
         $this->isShowingForm = false;
@@ -56,7 +54,7 @@ $save = function () {
         @endif
     @endif
 
-    @if($isShowingForm)
+    @if($isShowingForm || !$apiKey)
         <form wire:submit.prevent="save" class="w-full flex flex-col gap-4">
             <div class="flex sm:flex-row flex-col gap-2">
                 <input type="text" id="api_key" wire:model="newApiKey" placeholder="API key">

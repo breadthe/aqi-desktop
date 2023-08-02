@@ -3,11 +3,10 @@
 use App\Models\Observation;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Storage;
+use Native\Laravel\Facades\Settings;
 use function Livewire\Volt\{state, mount, rules};
 
 // settings
-state(['settings' => null]);
 state(['apiKey' => null]);
 state(['zip' => null]);
 state(['lastObservation' => null]);
@@ -19,11 +18,10 @@ state(['fetchError' => false]);
 rules(['zip' => 'required|numeric|digits:5']);
 
 mount(function () {
-    $this->settings = Storage::json('settings.json');
-    $this->apiKey = $this->settings['api_key'] ?? null;
-    $this->zip = $this->settings['last_zip'] ?? null;
-    $this->lastObservation = $this->settings['last_observation'] ?? null;
-    $this->lastUpdatedAt = $this->settings['last_updated_at'] ?? null;
+    $this->apiKey = Settings::get('api_key');
+    $this->zip = Settings::get('last_zip');
+    $this->lastObservation = Settings::get('last_observation');
+    $this->lastUpdatedAt = Settings::get('last_updated_at');
 });
 
 $fetch = function () {
@@ -35,7 +33,7 @@ $fetch = function () {
 
     $url = "https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=$this->zip&distance=25&API_KEY=$this->apiKey";
 
-    $this->saveZipCode();
+    Settings::set('last_zip', $this->zip);
 
     // @todo try catch
     $response = Http::get($url);
@@ -45,34 +43,18 @@ $fetch = function () {
     $this->lastUpdatedAt = now();
     $this->newObservation = $response->json();
 
-    $this->persistLastObservationInSettings();
-
     if (is_array($this->newObservation) && empty($this->newObservation)) {
         $this->fetchError = true;
 
         return;
     }
 
+    Settings::set('last_updated_at', $this->lastUpdatedAt);
+    Settings::set('last_observation', $this->newObservation);
+
     $this->saveObservation();
 
     $this->dispatch('observation-updated');
-};
-
-$saveZipCode = function () {
-    $this->settings['last_zip'] = $this->zip;
-
-    Storage::put('settings.json', json_encode($this->settings));
-};
-
-$persistLastObservationInSettings = function () {
-    if (empty($this->newObservation)) {
-        return;
-    }
-
-    $this->settings['last_updated_at'] = $this->lastUpdatedAt;
-    $this->settings['last_observation'] = $this->newObservation;
-
-    Storage::put('settings.json', json_encode($this->settings));
 };
 
 $saveObservation = function () {
@@ -104,7 +86,13 @@ $saveObservationParameter = function (array $parameter) {
 };
 ?>
 
-<div class="flex flex-col p-2">
+<div class="flex flex-col gap-4 p-2">
+    @empty($apiKey)
+        <div class="w-full max-w-sm mx-auto text-center bg-lime-900 p-4 rounded">
+            <span class="text-lime-500">No API key, register it in <a href="{{ route('settings') }}" class="underline">Settings</a></span>
+        </div>
+    @endempty
+
     <form wire:submit.prevent="fetch" class="w-full flex flex-col items-center gap-2">
         <div class="w-full flex items-center justify-center gap-2">
             <input type="text" id="zip" wire:model="zip" maxlength="5" placeholder="Zip code" class="">

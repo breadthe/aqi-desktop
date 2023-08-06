@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Observation;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -28,7 +29,7 @@ class FetchObservationService
         }
     }
 
-    public function handle(): bool
+    public function fetch(): bool
     {
         if (! $this->url) {
             return false;
@@ -53,9 +54,9 @@ class FetchObservationService
         return true;
     }
 
-    public function getLastObservation()
+    public function getLastObservation(): Collection
     {
-        return Settings::get('last_observation');
+        return collect(Settings::get('last_observation'));
     }
 
     private function saveObservation(): void

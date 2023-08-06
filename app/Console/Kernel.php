@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->call(function (FetchObservationService $service) {
-            $service->handle();
+            $service->fetch();
         })->everyMinute();
     }
 

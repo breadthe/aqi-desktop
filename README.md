@@ -39,3 +39,7 @@ php artisan native:build
 ## Database location
 
 /Users/<user>/Library/Application\ Support/NativePHP/database/database.sqlite
+
+## License
+
+This software is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

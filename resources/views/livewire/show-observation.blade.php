@@ -1,22 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\DB;
-use function Livewire\Volt\{state, mount, on};
+use function Livewire\Volt\{state, boot};
 use App\Enums\Category;
 use App\Models\Observation;
+use Native\Laravel\Facades\Settings;
 
 state(['lastZip' => null]);
 state(['lastObservation' => null]);
 
-mount(function () {
-    $this->lastZip = $this->getLastZip();
+boot(function () {
+    $this->lastZip = Settings::get('last_zip');
     $this->lastObservation = $this->getLastObservation();
 });
-
-on(['observation-updated' => function () {
-    $this->lastZip = $this->getLastZip();
-    $this->lastObservation = $this->getLastObservation();
-}]);
 
 $getLastZip = function()
 {
@@ -46,7 +42,7 @@ $getLastObservation = function()
 };
 ?>
 
-<div class="flex flex-col gap-4 p-2">
+<div class="flex flex-col gap-4 p-2" wire:poll>
     @if($lastObservation)
         <div class="w-full text-center font-bold">
             {{ "{$lastObservation[0]->reporting_area}, {$lastObservation[0]->state_code}" }}

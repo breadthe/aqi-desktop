@@ -170,6 +170,11 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FolioServiceProvider::class,
         App\Providers\VoltServiceProvider::class,
+
+        /*
+         * Other Service Providers...
+         */
+        App\Providers\FetchObservationServiceProvider::class
     ])->toArray(),
 
     /*
@@ -185,6 +190,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+
+        'FetchObservation' => App\Providers\FetchObservationServiceProvider::class,
     ])->toArray(),
 
 ];

@@ -4,12 +4,11 @@ use App\Models\Observation;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use Native\Laravel\Facades\Settings;
-use function Livewire\Volt\{state, mount, rules};
+use function Livewire\Volt\{state, boot, rules};
 
 // settings
 state(['apiKey' => null]);
 state(['zip' => null]);
-state(['lastObservation' => null]);
 state(['lastUpdatedAt' => null]);
 
 state(['newObservation' => null]);
@@ -17,10 +16,9 @@ state(['fetchError' => false]);
 
 rules(['zip' => 'required|numeric|digits:5']);
 
-mount(function () {
+boot(function () {
     $this->apiKey = Settings::get('api_key');
     $this->zip = Settings::get('last_zip');
-    $this->lastObservation = Settings::get('last_observation');
     $this->lastUpdatedAt = Settings::get('last_updated_at');
 });
 
@@ -106,7 +104,11 @@ $saveObservationParameter = function (array $parameter) {
         </div>
 
         @if($lastUpdatedAt)
-            <span class="text-xs" title="last updated: {{ $lastUpdatedAt }}">{{ Carbon::make($lastUpdatedAt)->diffForHumans() }}</span>
+            <span class="text-xs flex flex-col" title="last updated: {{ $lastUpdatedAt }}" wire:poll>
+                <span title="{{ Carbon::make($lastUpdatedAt)->toDateTimeString() }} UTC">
+                    {{ Carbon::make($lastUpdatedAt)->diffForHumans() }}
+                </span>
+            </span>
         @endif
 
         <div class="w-full text-center bg-lime-900">

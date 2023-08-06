@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\DB;
 use function Livewire\Volt\{state, boot};
 use App\Enums\Category;
-use App\Models\Observation;
 use Native\Laravel\Facades\Settings;
 
 state(['lastZip' => null]);
@@ -13,11 +12,6 @@ boot(function () {
     $this->lastZip = Settings::get('last_zip');
     $this->lastObservation = $this->getLastObservation();
 });
-
-$getLastZip = function()
-{
-    return Observation::query()->latest('updated_at')->first()->zip_code;
-};
 
 $getLastObservation = function()
 {

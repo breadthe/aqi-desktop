@@ -9,6 +9,7 @@ AQI category numbers, descriptions, and colors can be found at [AQI 101](https:/
 Made with [NativePHP](), [Folio](), and [Volt]().
 
 ![AQI Desktop v1.0.0 Location](https://github.com/breadthe/aqi-desktop/assets/17433578/9a4d0188-bff7-4dfb-b88e-77f1a2ea3c55)
+
 ![AQI Desktop v1.0.0 History](https://github.com/breadthe/aqi-desktop/assets/17433578/4195a45c-97ab-43c9-8116-f2523a26a36c)
 
 ## Install
@@ -38,12 +39,3 @@ php artisan native:build
 ## Database location
 
 /Users/<user>/Library/Application\ Support/NativePHP/database/database.sqlite
-
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

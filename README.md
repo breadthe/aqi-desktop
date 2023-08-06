@@ -8,6 +8,9 @@ AQI category numbers, descriptions, and colors can be found at [AQI 101](https:/
 
 Made with [NativePHP](), [Folio](), and [Volt]().
 
+![AQI Desktop v1.0.0 Location](https://github.com/breadthe/aqi-desktop/assets/17433578/9a4d0188-bff7-4dfb-b88e-77f1a2ea3c55)
+![AQI Desktop v1.0.0 History](https://github.com/breadthe/aqi-desktop/assets/17433578/4195a45c-97ab-43c9-8116-f2523a26a36c)
+
 ## Install
 
 Clone the repo, then run:

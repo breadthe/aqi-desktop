@@ -18,12 +18,12 @@
     </script>
 </head>
 
-<body class="antialiased flex flex-col justify-between content-between h-screen overflow-hidden">
+<body class="antialiased flex flex-col justify-start content-between h-screen overflow-hidden">
     <header class="w-full">
         @yield('header')
     </header>
 
-    <main class="flex flex-col justify-start overflow-y-scroll">
+    <main class="flex flex-col justify-between h-full overflow-y-scroll">
         @yield('content')
     </main>
 </body>

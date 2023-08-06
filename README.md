@@ -38,7 +38,7 @@ php artisan native:build
 
 ## Database location
 
-/Users/<user>/Library/Application\ Support/NativePHP/database/database.sqlite
+`/Users/<user>/Library/Application\ Support/NativePHP/database/database.sqlite`
 
 ## License
 

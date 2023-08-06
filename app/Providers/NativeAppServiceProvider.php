@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Native\Laravel\Facades\ContextMenu;
 use Native\Laravel\Facades\Dock;
+use Native\Laravel\Facades\MenuBar;
 use Native\Laravel\Facades\Window;
 use Native\Laravel\Facades\GlobalShortcut;
 use Native\Laravel\Menu\Menu;
@@ -18,20 +19,40 @@ class NativeAppServiceProvider
     {
         Menu::new()
             ->appMenu()
-            ->submenu('About', Menu::new()
-                ->link(config('nativephp.author_url'), config('nativephp.author'))
-            )
+            ->fileMenu()
             ->editMenu()
-            ->submenu('View', Menu::new()
+            /*->submenu('View', Menu::new()
                 ->toggleFullscreen()
                 ->separator()
                 ->link('https://laravel.com', 'Learn More', 'CmdOrCtrl+L')
+            )*/
+            ->submenu(
+                'About',
+                Menu::new()
+                    ->link(config('nativephp.author_url'), config('nativephp.author'))
             )
             ->register();
 
-        Window::open()
-            ->width(800)
-            ->height(800);
+        MenuBar::create()
+            // ->alwaysOnTop()
+            ->width(400)
+            ->height(420)
+            ->minWidth(400)
+            ->minHeight(420)
+            ->maxWidth(400)
+            ->maxHeight(420)
+            ->route('location')
+            ->showDockIcon();
+
+        /*Window::open()
+            ->alwaysOnTop()
+            ->rememberState()
+            ->width(400)
+            ->height(400)
+            ->minWidth(400)
+            ->minHeight(400)
+            ->maxWidth(400)
+            ->maxHeight(400);*/
 
         /**
             Dock::menu(

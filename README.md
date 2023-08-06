@@ -30,10 +30,10 @@ php artisan native:serve
 
 ## Build
 
-```shell
-npm run build
+Build for specific platform `mac` / `win` / `linux`.
 
-php artisan native:build
+```shell
+php artisan native:build mac
 ```
 
 ## Database location

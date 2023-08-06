@@ -53,6 +53,24 @@ enum Category: int
     }
 
     /**
+     * @see https://docs.airnowapi.org/aq101
+     * @throws Exception
+     */
+    public function getAqiNumberRange(): array
+    {
+        return match ($this->value) {
+            self::Good->value => ['lower' => 0, 'upper' => 50],
+            self::Moderate->value => ['lower' => 51, 'upper' => 100],
+            self::Unhealthy_for_Sensitive_Groups->value => ['lower' => 101, 'upper' => 150],
+            self::Unhealthy->value => ['lower' => 151, 'upper' => 200],
+            self::Very_Unhealthy->value => ['lower' => 201, 'upper' => 300],
+            self::Hazardous->value => ['lower' => 301, 'upper' => 500],
+            self::Unavailable->value => ['lower' => null, 'upper' => null],
+            default => throw new Exception('Unexpected match value'),
+        };
+    }
+
+    /**
      * @throws Exception
      */
     public function getEmoji(): string

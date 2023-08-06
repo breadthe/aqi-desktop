@@ -29,3 +29,21 @@ button.btn-link {
     @apply bg-transparent border-none font-normal p-0;
     @apply text-lime-600 hover:underline hover:bg-transparent;
 }
+
+.gradient {
+    background: rgb(0,228,0);
+
+    /* smooth */
+    //background: linear-gradient(90deg, rgba(0,228,0,1) 0%, rgba(255,255,0,1) 10%, rgba(255,126,0,1) 20%, rgba(255,0,0,1) 30%, rgba(143,63,151,1) 60%, rgba(126,0,35,1) 100%);
+
+    /* sharp */
+    background: linear-gradient(
+        90deg,
+        rgba(0,228,0,1) 0%, rgba(0,228,0,1) 10%,
+        rgba(255,255,0,1) 10%, rgba(255,255,0,1) 20%,
+        rgba(255,126,0,1) 20%, rgba(255,126,0,1) 30%,
+        rgba(255,0,0,1) 30%, rgba(255,0,0,1) 60%,
+        rgba(143,63,151,1) 60%, rgba(143,63,151,1) 100%,
+        rgba(126,0,35,1) 100%
+    );
+}

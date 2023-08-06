@@ -8,4 +8,6 @@
     <livewire:fetch-observation />
 
     <livewire:show-observation />
+
+    <livewire:legend />
 @endsection

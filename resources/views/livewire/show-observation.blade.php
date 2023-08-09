@@ -37,7 +37,7 @@ $getLastObservation = function()
 ?>
 
 <div class="flex flex-col gap-4 p-2" wire:poll>
-    @if($lastObservation)
+    @if(count($lastObservation))
         <div class="w-full text-center font-bold">
             {{ "{$lastObservation[0]->reporting_area}, {$lastObservation[0]->state_code}" }}
         </div>

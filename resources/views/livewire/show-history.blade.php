@@ -55,7 +55,7 @@ $formatDateTime = function ($date_time_observed) {
 };
 ?>
 
-<div class="flex flex-col py-2 px-8">
+<div class="flex flex-col py-2 px-8 h-full overflow-y-scroll">
     @if($history->count())
         <table class="w-full mx-auto max-w-sm">
             <thead class="sticky top-0 bg-neutral-900/70">

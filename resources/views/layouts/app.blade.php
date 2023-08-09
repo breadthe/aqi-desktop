@@ -23,7 +23,7 @@
         @yield('header')
     </header>
 
-    <main class="flex flex-col justify-between h-full overflow-y-scroll">
+    <main class="flex flex-col justify-between h-full">
         @yield('content')
     </main>
 </body>

@@ -18,6 +18,8 @@ Clone the repo, then run:
 
 ```shell
 composer install
+
+npm install
 ```
 
 ## Run in dev mode
@@ -25,6 +27,7 @@ composer install
 ```shell
 npm run dev
 
+php artisan native:migrate
 php artisan native:serve
 ```
 

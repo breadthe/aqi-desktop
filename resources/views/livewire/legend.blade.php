@@ -27,7 +27,7 @@ boot(function (FetchObservationService $service) {
 <aside class="flex flex-col gap-1" wire:poll>
     @if($pm25)
         <div class="gradient w-full h-6 opacity-50 hover:opacity-100 relative" title="PM2.5 — {{ $pm25 }} {{ $pm25_category['Name'] }}">
-            <div class="marker absolute top-0 bg-black h-24 w-[2px]"
+            <div class="marker absolute top-0 bg-black h-6 w-[2px]"
                  style="left: {{ $this->pm25_position }}%"></div>
             <div class="label absolute top-1 bg-white text-black text-xs px-0.5 border border-black rounded z-10"
                  style="left: calc({{ $this->pm25_position }}% - 11px)">
@@ -38,7 +38,7 @@ boot(function (FetchObservationService $service) {
 
     @if($o3)
         <div class="gradient w-full h-6 opacity-50 hover:opacity-100 relative" title="O3 — {{ $o3 }} {{ $o3_category['Name'] }}">
-            <div class="marker absolute top-0 bg-black h-24 w-[2px]"
+            <div class="marker absolute top-0 bg-black h-6 w-[2px]"
                  style="left: {{ $this->o3_position }}%"></div>
             <div class="label absolute top-1 bg-white text-black text-xs px-0.5 border border-black rounded z-10"
                  style="left: calc({{ $this->o3_position }}% - 11px)">

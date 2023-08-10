@@ -4,7 +4,7 @@ use App\Models\Observation;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use Native\Laravel\Facades\Settings;
-use function Livewire\Volt\{state, boot, rules};
+use function Livewire\Volt\{state, mount, boot, rules};
 
 // settings
 state(['apiKey' => null]);
@@ -15,6 +15,12 @@ state(['newObservation' => null]);
 state(['fetchError' => false]);
 
 rules(['zip' => 'required|numeric|digits:5']);
+
+mount(function () {
+    if ($this->zip) {
+        $this->fetch();
+    }
+});
 
 boot(function () {
     $this->apiKey = Settings::get('api_key');

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "031341097afea21acd5737c2fa698011",
+    "content-hash": "4bb90277ba3da149a22847f2e2f7b133",
     "packages": [
         {
             "name": "brick/math",
@@ -2128,20 +2128,21 @@
         },
         {
             "name": "nativephp/electron",
-            "version": "0.3.3",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/electron.git",
-                "reference": "47949012a2ee82fa8c67bf0a81519dd16a4651b0"
+                "reference": "d9bc645328148dfa334968ede4388b59d50abd56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/electron/zipball/47949012a2ee82fa8c67bf0a81519dd16a4651b0",
-                "reference": "47949012a2ee82fa8c67bf0a81519dd16a4651b0",
+                "url": "https://api.github.com/repos/NativePHP/electron/zipball/d9bc645328148dfa334968ede4388b59d50abd56",
+                "reference": "d9bc645328148dfa334968ede4388b59d50abd56",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^10.0",
+                "laravel/prompts": "^0.1.1",
                 "nativephp/laravel": "*",
                 "nativephp/php-bin": "*",
                 "php": "^8.1",
@@ -2195,10 +2196,9 @@
                 "nativephp"
             ],
             "support": {
-                "issues": "https://github.com/NativePHP/electron/issues",
-                "source": "https://github.com/NativePHP/electron/tree/0.3.3"
+                "source": "https://github.com/NativePHP/electron/tree/0.4.0"
             },
-            "time": "2023-07-31T11:33:20+00:00"
+            "time": "2023-08-09T20:58:06+00:00"
         },
         {
             "name": "nativephp/laravel",

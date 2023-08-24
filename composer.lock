@@ -976,16 +976,16 @@
         },
         {
             "name": "laravel/folio",
-            "version": "v1.0.0-beta.6",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/folio.git",
-                "reference": "7a6f61300a8d9294d04dd227243883eec75d1b28"
+                "reference": "e3ca1bf727f009ef8cc4810a43c0beacdcb5f0dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/folio/zipball/7a6f61300a8d9294d04dd227243883eec75d1b28",
-                "reference": "7a6f61300a8d9294d04dd227243883eec75d1b28",
+                "url": "https://api.github.com/repos/laravel/folio/zipball/e3ca1bf727f009ef8cc4810a43c0beacdcb5f0dd",
+                "reference": "e3ca1bf727f009ef8cc4810a43c0beacdcb5f0dd",
                 "shasum": ""
             },
             "require": {
@@ -1044,20 +1044,20 @@
                 "issues": "https://github.com/laravel/folio/issues",
                 "source": "https://github.com/laravel/folio"
             },
-            "time": "2023-08-16T15:46:00+00:00"
+            "time": "2023-08-23T16:48:41+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v10.19.0",
+            "version": "v10.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b8557e4a708a1bd2bc8229bd53feecfa2ac1c6fb"
+                "reference": "a655dca3fbe83897e22adff652b1878ba352d041"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b8557e4a708a1bd2bc8229bd53feecfa2ac1c6fb",
-                "reference": "b8557e4a708a1bd2bc8229bd53feecfa2ac1c6fb",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a655dca3fbe83897e22adff652b1878ba352d041",
+                "reference": "a655dca3fbe83897e22adff652b1878ba352d041",
                 "shasum": ""
             },
             "require": {
@@ -1244,20 +1244,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-08-15T13:42:57+00:00"
+            "time": "2023-08-22T13:37:09+00:00"
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.1.5",
+            "version": "v0.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "d880a909df144a4bf5760ebd09aba114f79d9adc"
+                "reference": "b514c5620e1b3b61221b0024dc88def26d9654f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/d880a909df144a4bf5760ebd09aba114f79d9adc",
-                "reference": "d880a909df144a4bf5760ebd09aba114f79d9adc",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/b514c5620e1b3b61221b0024dc88def26d9654f4",
+                "reference": "b514c5620e1b3b61221b0024dc88def26d9654f4",
                 "shasum": ""
             },
             "require": {
@@ -1290,22 +1290,22 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.1.5"
+                "source": "https://github.com/laravel/prompts/tree/v0.1.6"
             },
-            "time": "2023-08-15T14:29:44+00:00"
+            "time": "2023-08-18T13:32:23+00:00"
         },
         {
             "name": "laravel/sanctum",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "8ebda85d59d3c414863a7f4d816ef8302faad876"
+                "reference": "217e8a2bc5aa6a827ced97fcb76504029d3115d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/8ebda85d59d3c414863a7f4d816ef8302faad876",
-                "reference": "8ebda85d59d3c414863a7f4d816ef8302faad876",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/217e8a2bc5aa6a827ced97fcb76504029d3115d7",
+                "reference": "217e8a2bc5aa6a827ced97fcb76504029d3115d7",
                 "shasum": ""
             },
             "require": {
@@ -1318,9 +1318,9 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^7.0|^8.0",
+                "orchestra/testbench": "^7.28.2|^8.8.3",
                 "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^9.3"
+                "phpunit/phpunit": "^9.6"
             },
             "type": "library",
             "extra": {
@@ -1358,7 +1358,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2023-05-01T19:39:51+00:00"
+            "time": "2023-08-22T13:21:11+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -1882,16 +1882,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.0.0-beta.10",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "526bda01304b16908d029f2010504957d8c46e05"
+                "reference": "b2ba0baa66ddc294ba7b8b105d750dc5124056ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/526bda01304b16908d029f2010504957d8c46e05",
-                "reference": "526bda01304b16908d029f2010504957d8c46e05",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/b2ba0baa66ddc294ba7b8b105d750dc5124056ba",
+                "reference": "b2ba0baa66ddc294ba7b8b105d750dc5124056ba",
                 "shasum": ""
             },
             "require": {
@@ -1943,7 +1943,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.0.0-beta.10"
+                "source": "https://github.com/livewire/livewire/tree/v3.0.0"
             },
             "funding": [
                 {
@@ -1951,20 +1951,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-19T04:25:59+00:00"
+            "time": "2023-08-24T15:33:35+00:00"
         },
         {
             "name": "livewire/volt",
-            "version": "v1.0.0-beta.6",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/volt.git",
-                "reference": "a3839304f441398b036151224269188a686b2814"
+                "reference": "3b0713661313735d1ee2f678949850567f395097"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/volt/zipball/a3839304f441398b036151224269188a686b2814",
-                "reference": "a3839304f441398b036151224269188a686b2814",
+                "url": "https://api.github.com/repos/livewire/volt/zipball/3b0713661313735d1ee2f678949850567f395097",
+                "reference": "3b0713661313735d1ee2f678949850567f395097",
                 "shasum": ""
             },
             "require": {
@@ -2023,7 +2023,7 @@
                 "issues": "https://github.com/livewire/volt/issues",
                 "source": "https://github.com/livewire/volt"
             },
-            "time": "2023-08-17T09:02:29+00:00"
+            "time": "2023-08-22T13:36:50+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3512,16 +3512,16 @@
         },
         {
             "name": "spatie/laravel-package-tools",
-            "version": "1.16.0",
+            "version": "1.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "38fe533e93f86a1b2fb1000bf7df09c4748e6458"
+                "reference": "cc7c991555a37f9fa6b814aa03af73f88026a83d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/38fe533e93f86a1b2fb1000bf7df09c4748e6458",
-                "reference": "38fe533e93f86a1b2fb1000bf7df09c4748e6458",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/cc7c991555a37f9fa6b814aa03af73f88026a83d",
+                "reference": "cc7c991555a37f9fa6b814aa03af73f88026a83d",
                 "shasum": ""
             },
             "require": {
@@ -3560,7 +3560,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.0"
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.1"
             },
             "funding": [
                 {
@@ -3568,7 +3568,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-09T14:08:04+00:00"
+            "time": "2023-08-23T09:04:39+00:00"
         },
         {
             "name": "spatie/once",
@@ -8423,16 +8423,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "dd15fbe82ef5392798941efae93c49395a87d943"
+                "reference": "4ed813d16edb5a1ab0d7f4b1d116c37ee8cdf3c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/dd15fbe82ef5392798941efae93c49395a87d943",
-                "reference": "dd15fbe82ef5392798941efae93c49395a87d943",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/4ed813d16edb5a1ab0d7f4b1d116c37ee8cdf3c0",
+                "reference": "4ed813d16edb5a1ab0d7f4b1d116c37ee8cdf3c0",
                 "shasum": ""
             },
             "require": {
@@ -8511,7 +8511,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-06-28T13:51:52+00:00"
+            "time": "2023-08-23T06:24:34+00:00"
         },
         {
             "name": "spatie/laravel-ray",
